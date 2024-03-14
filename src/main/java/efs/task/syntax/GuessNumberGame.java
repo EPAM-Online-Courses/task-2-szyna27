@@ -28,10 +28,11 @@ public class GuessNumberGame {
             }
         }
         catch (Exception e) {
+            System.out.println(UsefulConstants.WRONG_ARGUMENT);
             throw new IllegalArgumentException(UsefulConstants.WRONG_ARGUMENT);
         }
 
-        maxAttempts = (int)Math.round(Math.log(maxNumber)) + 1;
+        maxAttempts = (int)(Math.log(maxNumber) / Math.log(2)) + 1;
         actualAttempt = 1;
     }
 
