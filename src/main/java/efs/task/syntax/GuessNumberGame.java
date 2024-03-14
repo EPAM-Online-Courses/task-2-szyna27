@@ -39,7 +39,7 @@ public class GuessNumberGame {
     public void play() {
         System.out.println("<1," + maxNumber + ">");
         Random random = new Random();
-        int correctAnswer = Math.abs(random.nextInt()) % maxNumber;
+        int correctAnswer = Math.abs(random.nextInt()) % maxNumber + 1;
         Scanner scanner = new Scanner(System.in);
         boolean win = false;
 
@@ -61,22 +61,20 @@ public class GuessNumberGame {
             }
         }
         
-        if(win) {
+        if (win) {
             System.out.println(
                 UsefulConstants.CONGRATULATIONS + ", " + actualAttempt + 
-                "tyle prób zajęło Ci odgadnięcie liczby" + correctAnswer
+                " tyle prób zajęło Ci odgadnięcie liczby " + correctAnswer
                 );
         }
         else {
             System.out.println(
                 UsefulConstants.UNFORTUNATELY + ", wyczerpales limit prób (" 
-                + maxAttempts + ") do odgadnięcia liczby" + correctAnswer
+                + maxAttempts + ") do odgadnięcia liczby " + correctAnswer
                 );
         }
             
-
         scanner.close();
-        
     }
 
     public void print_live_bar() {
