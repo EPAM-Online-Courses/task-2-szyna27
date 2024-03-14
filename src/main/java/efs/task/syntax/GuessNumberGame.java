@@ -37,7 +37,7 @@ public class GuessNumberGame {
     }
 
     public void play() {
-        System.out.println("<1," + maxNumber + ">");
+        System.out.println("Zagrajmy. Zgadnij liczbę z zakresu <1," + maxNumber + ">");
         Random random = new Random();
         int correctAnswer = Math.abs(random.nextInt()) % maxNumber + 1;
         Scanner scanner = new Scanner(System.in);
@@ -78,7 +78,7 @@ public class GuessNumberGame {
     }
 
     public void print_live_bar() {
-        System.out.print("[");
+        System.out.print("Twoje próby: [");
         int i;
         for (i = 0; i < actualAttempt; i++){
             System.out.print("*");
@@ -93,7 +93,7 @@ public class GuessNumberGame {
         String number_string = "";
         int number = -1;
         try {
-            System.out.println(UsefulConstants.GIVE_ME);
+            System.out.println(UsefulConstants.GIVE_ME + " liczbę:");
             number_string = scanner.nextLine();
             number = Integer.parseInt(number_string);
         } 
