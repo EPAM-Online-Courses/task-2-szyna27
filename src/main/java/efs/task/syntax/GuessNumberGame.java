@@ -33,7 +33,7 @@ public class GuessNumberGame {
         }
 
         maxAttempts = (int)(Math.log(maxNumber) / Math.log(2)) + 1;
-        actualAttempt = 1;
+        actualAttempt = 0;
     }
 
     public void play() {
@@ -44,6 +44,7 @@ public class GuessNumberGame {
         boolean win = false;
 
         while (actualAttempt < maxAttempts) {
+            actualAttempt++;
             print_live_bar();
             int number = read_number(scanner);
             if (number == -1);
@@ -58,8 +59,6 @@ public class GuessNumberGame {
                 win = true;
                 break;
             }
-
-            actualAttempt++;
         }
         
         if(win) {
